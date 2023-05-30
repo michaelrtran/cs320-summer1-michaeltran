@@ -1,3 +1,10 @@
+Standard ML of New Jersey v110.79 [built: Sat Oct 26 12:27:04 2019]
+- [opening ./../MySolution/assign00-01.sml]
+[opening ./../assign00-lib.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
 exception MyAssertExn
 exception MyErrorExn
 exception MyNotImplementedExn
@@ -12,9 +19,15 @@ val fact = fn: int -> int
 val myans = 21: int
 val myloop = fn: int -> int
 val it = (): unit
-Assign00-01-test passed!
-val it = (): unit
+= Assign00-01-test passed!
 
+Standard ML of New Jersey v110.79 [built: Sat Oct 26 12:27:04 2019]
+- [opening ./../MySolution/assign00-02.sml]
+[opening ./../assign00-lib.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
 exception MyAssertExn
 exception MyErrorExn
 exception MyNotImplementedExn
@@ -29,9 +42,15 @@ val isPrime = fn: int -> bool
 val myans1 = true: bool
 val myans2 = true: bool
 val it = (): unit
-Assign00-02-test passed!
-val it = (): unit
+= Assign00-02-test passed!
 
+Standard ML of New Jersey v110.79 [built: Sat Oct 26 12:27:04 2019]
+- [opening ./../MySolution/assign00-03.sml]
+[opening ./../assign00-lib.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
 exception MyAssertExn
 exception MyErrorExn
 exception MyNotImplementedExn
@@ -47,9 +66,15 @@ val assert = fn: bool -> unit
 val int2str = fn: int -> string
 val myans2 = "12345": string
 val it = (): unit
-Assign00-03-test passed!
-val it = (): unit
+= Assign00-03-test passed!
 
+Standard ML of New Jersey v110.79 [built: Sat Oct 26 12:27:04 2019]
+- [opening ./../MySolution/assign00-04.sml]
+[opening ./../assign00-lib.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
 exception MyAssertExn
 exception MyErrorExn
 exception MyNotImplementedExn
@@ -64,9 +89,15 @@ val myans1 = 12345: int
 val myans2 = 98765: int
 val str2int = fn: string -> int
 val it = (): unit
-Assign00-04-test passed!
-val it = (): unit
+= Assign00-04-test passed!
 
+Standard ML of New Jersey v110.79 [built: Sat Oct 26 12:27:04 2019]
+- [opening ./../MySolution/assign00-05.sml]
+[opening ./../assign00-lib.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
 exception MyAssertExn
 exception MyErrorExn
 exception MyNotImplementedExn
@@ -84,5 +115,4 @@ val myans4 = "1z": string
 val myans5 = "leahcim si eman ym": string
 val stringrev = fn: string -> string
 val it = (): unit
-Assign00-05-test passed!
-val it = (): unit
+= Assign00-05-test passed!
