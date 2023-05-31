@@ -143,7 +143,17 @@ that are sorted according to their ranks.
 *)
 fun
 card5_fullhouse
-(cs: card list): bool = raise NotImplemented320
+(cs: card list): bool = 
+let
+  fun numrank(rank: rank): int =
+  val _ = current
+  if rank = current then 1 + numrank(rank)::remainder else 
+  numrank(rank)
+
+  fun fullhouse_helper(cs) (* not rlly sure how to finish this one *)
+in
+  
+end
 
 (* ****** ****** *)
 

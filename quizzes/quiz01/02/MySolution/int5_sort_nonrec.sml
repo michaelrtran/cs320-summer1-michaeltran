@@ -55,26 +55,56 @@ int5_sort_nr(xs) for every 5-tuple xs of the type int5.
 
 val
 int2_sort_nr =
-fn(xs: int2): int2 => raise NotImplemented320
-
+fn(xs: int2): int2 => 
+  let
+    val(x1, x2) = xs
+  in 
+    if x1 <= x2 then (x1, x2) else (x2, x1)
+  end
 (* ****** ****** *)
 
 val
 int3_sort_nr =
-fn(xs: int3): int3 => raise NotImplemented320
+fn(xs: int3): int3 =>
+  let
+    val (x1, x2, x3) = xs
+    val(y1, y2) = int2_sort_nr(x1, x2)
+  in
+    if x3 <= y1 then (x3, y1, y2)
+    else if x3 <= y2 then (y1, x3, y2)
+    else (y1, y2, x3)
+  end
 
 (* ****** ****** *)
 
 val
 int4_sort_nr =
-fn(xs: int4): int4 => raise NotImplemented320
+fn(xs: int4): int4 => 
+let
+  val (x1, x2, x3, x4) = xs
+  val(y1, y2, y3) = int3_sort_nr(x1, x2, x3)
+in
+  if x4 <= y1 then (x4, y1, y2, y3)
+  else if x4 <= y2 then (y1, x4, y2, y3)
+  else if x4 <= y3 then (y1, y2, x4, y3)
+  else (y1, y2, y3, x4)
+end
 
 (* ****** ****** *)
 
 val
 int5_sort_nr =
-fn(xs: int5): int5 => raise NotImplemented320
-
+fn(xs: int5): int5 => 
+let
+  val (x1, x2, x3, x4, x5) = xs
+  val(y1, y2, y3, y4) = int4_sort_nr(x1, x2, x3, x4)
+in
+  if x5 <= y1 then (x5, y1, y2, y3, y4)
+  else if x5 <= y2 then (y1, x5, y2, y3, y4)
+  else if x5 <= y3 then (y1, y2, x5, y3, y4)
+  else if x5 <= y4 then (y1, y2, y3, x5, y4)
+  else (y1, y2, y3, y4, x5)
+end
 (* ****** ****** *)
 
 (* end of [CS320-2023-Sum1-quiz01-int5_sort_nonrec.sml] *)
