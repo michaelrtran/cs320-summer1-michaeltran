@@ -107,4 +107,7 @@ in
 end
 (* ****** ****** *)
 
+val xs = (9, 5, 3, 7, 2)
+int5_sort_nr(xs)
+
 (* end of [CS320-2023-Sum1-quiz01-int5_sort_nonrec.sml] *)
