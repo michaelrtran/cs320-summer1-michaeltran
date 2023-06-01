@@ -145,14 +145,14 @@ fun
 card5_fullhouse
 (cs: card list): bool = 
 let
-  fun numrank(rank: rank): int =
-  val _ = current
-  if rank = current then 1 + numrank(rank)::remainder else 
-  numrank(rank)
-
-  fun fullhouse_helper(cs) (* not rlly sure how to finish this one *)
+  val (card1 :: card2 :: card3 :: card4 :: card5 :: []) = cs (* creating a list to "index" into *)
 in
-  
+  if rank2int(#2(card1)) = rank2int(#2(card2)) andalso rank2int(#2(card4)) = rank2int(#2(card5)) then
+  (* since the cards are already ordered (xxyyy or yyyxx), the first two and last two cards are equal *)
+    if rank2int(#2(card1)) = rank2int(#2(card3)) then true (* therefore, we only check if the third card is the same *)
+    else if rank2int(#2(card3)) = rank2int(#2(card5)) then true
+    else false
+  else false
 end
 
 (* ****** ****** *)
