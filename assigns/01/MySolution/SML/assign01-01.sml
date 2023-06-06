@@ -24,9 +24,9 @@ fun
 xlist_size(xs: 'a xlist): int = 
     case xs of
         xlist_nil => 0
-    |   xlist_cons(x, t1) => 1 + xlist_size(t1)
-    |   xlist_snoc(xs, x) => 1 + xlist_size(xs)
-    |   xlist_append(xs1, xs2) => xlist_size(xs1) + xlist_size(xs2)
+    |   xlist_cons(x, xs) => 1 + xlist_size(xs)
+    |   xlist_snoc(xs, x) => xlist_size(xs) + 1
+    |   xlist_append(xs, ys) => xlist_size(xs) + xlist_size(ys)
     |   xlist_reverse(xs) => xlist_size(xs)
 
 (* ****** ****** *)
