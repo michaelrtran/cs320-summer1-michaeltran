@@ -15,6 +15,7 @@ list_tabulate(n: int, f: int -> 'a): 'a list
 
 (* ****** ****** *)
 
+<<<<<<< HEAD
 fun list_tabulate(n: int, f: int -> 'a): 'a list =
   let
     fun helper(x: int, y: int): 'a list =
@@ -25,3 +26,6 @@ fun list_tabulate(n: int, f: int -> 'a): 'a list =
   end
 
 (* end of [CS320-2023-Spring-assign03-03.sml] *)
+=======
+(* end of [CS320-2023-Sum1-assign02-03.sml] *)
+>>>>>>> upstream/main
