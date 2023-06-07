@@ -15,4 +15,13 @@ list_tabulate(n: int, f: int -> 'a): 'a list
 
 (* ****** ****** *)
 
+fun list_tabulate(n: int, f: int -> 'a): 'a list =
+  let
+    fun helper(x: int, y: int): 'a list =
+      if x = 0 then []
+      else f(y) :: helper(x - 1, y + 1)
+  in
+    helper(n, 0)
+  end
+
 (* end of [CS320-2023-Spring-assign03-03.sml] *)

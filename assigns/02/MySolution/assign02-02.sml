@@ -21,4 +21,13 @@ fun list_range(start: int, finish: int): int list
 
 (* ****** ****** *)
 
+fun list_range(start: int, finish: int): int list =
+    let
+      fun helper(start: int, finish: int): int list =
+        if start >= finish then nil
+        else start :: helper(start + 1, finish)
+    in
+      helper(start, finish)
+    end
+
 (* end of [CS320-2023-Spring-assign03-02.sml] *)
