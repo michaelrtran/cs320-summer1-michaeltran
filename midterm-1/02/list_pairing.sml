@@ -37,12 +37,14 @@ list_pairing
 
 fun list_pairing (xs: 'a list): ('a * 'a) list * 'a option =
     let
-      fun helper(length: int, mid: 'a): ('a * 'a) list * 'a option =
-        case length of
-            list_length(xs) mod 2 = 0 => 
-            
+      fun helper(first: 'a, lists: ('a * 'a) list, last: 'a list): ('a * 'a) list * 'a option =
+        case last of 
+            [] => (lists, NONE)
+        |   [num] => (lists, SOME(num))
+        |   _ =>
+
     in
-      exp
+      helper(list_head(xs), nil, list_tail(xs))
     end
 
 
