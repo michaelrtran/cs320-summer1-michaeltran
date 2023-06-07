@@ -35,4 +35,15 @@ list_pairing
 *)
 (* ****** ****** *)
 
+fun list_pairing (xs: 'a list): ('a * 'a) list * 'a option =
+    let
+      fun helper(length: int, mid: 'a): ('a * 'a) list * 'a option =
+        case length of
+            list_length(xs) mod 2 = 0 => 
+            
+    in
+      exp
+    end
+
+
 (* end of [CS320-2023-Sum1-midterm1-list_pairing.sml] *)

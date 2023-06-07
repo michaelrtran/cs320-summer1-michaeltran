@@ -36,6 +36,14 @@ fun
 list_averages(xs: real list): real list = ...
 *)
 
+fun list_averages(xs: real list): real list =
+    let
+      fun helper(xs1: real list, _, _) = nil | helper((x1 :: xs1), total, index) = (* pattern matching *)
+          total / int2real(index) (* calculating the average *):: helper(xs1, total + x1, index + 1) 
+    in
+      helper(xs, 0.0, 1) (* index must start with 1 bc dividing by 0 is illegal in math *)
+    end
+
 (* ****** ****** *)
 
 (* end of [CS320-2023-Sum1-midterm1-list_averages.sml] *)
