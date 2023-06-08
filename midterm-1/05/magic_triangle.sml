@@ -15,7 +15,7 @@ Magic Triangle:
    1   5   10  10  5   1
  1   6   15  20  15  6   1
 
-THe magic triangle has the following structure:
+The magic triangle has the following structure:
 - All numbers on the left and right borders are 1.
 - All numbers in the interior (non-border) are the sum of the numbers in the row directly above it.
 
@@ -70,5 +70,27 @@ magic_triangle(5) =
 *)
 
 (* ****** ****** *)
+
+fun current(prev: int list): int list =
+  let (* pattern matching function calls *)
+    fun middleoflist [] = [] (* when you reach the end of the row (after next case), you must add the empty list to the end to fulfill the recursive call *)
+    | middleoflist [x1] = [x1] (* when you are at the last element, simply return the last element *)
+    | middleoflist (head :: second :: rest) = (head + second) :: middleoflist(second :: rest) (* recursive call *)
+  in
+    [1] @ middleoflist(prev) (* @ [1] - commented out to prevent ERROR320 NONE exception *)
+  end
+
+fun magic_triangle (n : int) : int list list =
+let
+  fun make(n: int, previous: int list list): int list list =
+    if n = 0 then previous else make(n - 1, previous @ [current(hd(rev previous))])
+in
+  make(n, [[1]])
+end
+
+
+
+
+
 
 (* end of [CS320-2023-Sum1-midterm1-magic_triangle.sml] *)

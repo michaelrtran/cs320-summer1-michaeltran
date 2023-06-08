@@ -54,4 +54,18 @@ val nxs = list_grouping(int1_map_list(N, fn i => N-i))
 *)
 (* ****** ****** *)
 
+
+
+fun list_grouping(xs: int list): (int * int) list =
+(* merge and quick sort are the fastest and most efficient algorithms to sort lists of integers *)
+    let
+        fun helper(count: int, []) = [(1, count)] (* pattern matching *)
+        |   helper(count: int, x1 :: xs) =
+                if x1 = count then
+                    let val(occ, elem) :: remainder = 
+                else
+    in
+    end;
+
+
 (* end of [CS320-2023-Sum1-midterm1-list_grouping.sml] *)
