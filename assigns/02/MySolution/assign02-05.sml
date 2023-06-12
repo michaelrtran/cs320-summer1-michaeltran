@@ -32,20 +32,11 @@ end
 
 (* ****** ****** *)
 
-fun list_tabulate(n: int, f: int -> 'a): 'a list = (* took this from assign02-03.sml for help *)
-  let
-    fun helper(x: int, y: int): 'a list =
-      if x = 0 then []
-      else f(y) :: helper(x - 1, y + 1)
-  in
-    helper(n, 0)
-  end
-
 fun isPrime (n0: int): bool =
-  let
-    list_tabulate(n - 1, fn(x) => x + 2)
-  in
-    exp
-  end
+  if n0 <= 1 then false
+  else 
+  int1_forall(n0, fn (i) => 
+    if i >= 2 then n0 mod i <> 0 else true
+  )
 
 (* end of [CS320-2023-Sum1-assign02-05.sml] *)

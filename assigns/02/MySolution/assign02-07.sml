@@ -39,8 +39,7 @@ type
 
 
 fun forall_to_exists (forall: ('xs,'x0)forall_t): ('xs,'x0)exists_t = 
-    
-
+    fn(xs: 'xs, lambda) => not (forall(xs, fn(y) => not (lambda(y)))) (* took from forall_to_foreach in class *)
 
 (* ****** ****** *)
 

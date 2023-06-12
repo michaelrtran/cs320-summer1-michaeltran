@@ -16,10 +16,13 @@ fun list_longest_ascend(xs: int list): int list
 (* ****** ****** *)
 
 fun list_longest_ascend(xs: int list): int list =
-    let
-      dec
-    in
-      exp
-    end
-
+  case xs of
+    [] => []
+  | x1 :: xs1 =>
+      let
+        val list1 = x1 :: list_longest_ascend(list_filter(xs1, fn x => (x >= x1)))
+        val list2 = list_longest_ascend(xs1)
+      in
+        if list_length(list1) >= list_length(list2) then list1 else list2
+      end
 (* end of [CS320-2023-Sum1-assign03-04.sml] *)

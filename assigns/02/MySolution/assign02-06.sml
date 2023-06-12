@@ -32,11 +32,7 @@ of a set is insignificant.
 
 
 val list_subsets = fn(xs: 'a list) => 
-  let
-    val listsubsethelper = fn(xs1: 'a list list, x1: 'a) => list_map(xs1, fn(xs) => xs @ [x1]) @ xs1
-  in
-    list_foldl(xs, [[]], listsubsethelper)
-  end
+  
 
 
 (* ****** ****** *)
