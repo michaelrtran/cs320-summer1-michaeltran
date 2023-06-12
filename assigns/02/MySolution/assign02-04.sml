@@ -15,7 +15,6 @@ fun list_longest_ascend(xs: int list): int list
 
 (* ****** ****** *)
 
-<<<<<<< HEAD
 fun list_longest_ascend(xs: int list): int list =
     let
       dec
@@ -24,6 +23,3 @@ fun list_longest_ascend(xs: int list): int list =
     end
 
 (* end of [CS320-2023-Sum1-assign03-04.sml] *)
-=======
-(* end of [CS320-2023-Sum1-assign02-04.sml] *)
->>>>>>> upstream/main
