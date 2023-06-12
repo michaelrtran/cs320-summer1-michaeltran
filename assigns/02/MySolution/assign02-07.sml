@@ -37,11 +37,10 @@ type
 'xs * ('x0 -> bool) -> bool
 (* ****** ****** *)
 
-(*
-fun
-forall_to_exists
-(forall: ('xs,'x0)forall_t): ('xs,'x0)exists_t = ...
-*)
+
+fun forall_to_exists (forall: ('xs,'x0)forall_t): ('xs,'x0)exists_t = 
+    
+
 
 (* ****** ****** *)
 
