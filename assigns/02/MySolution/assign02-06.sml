@@ -32,7 +32,7 @@ of a set is insignificant.
 
 
 val list_subsets = fn(xs: 'a list) => 
-  
+
 
 
 (* ****** ****** *)

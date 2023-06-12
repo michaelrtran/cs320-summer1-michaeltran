@@ -17,12 +17,14 @@ fun list_longest_ascend(xs: int list): int list
 
 fun list_longest_ascend(xs: int list): int list =
   case xs of
-    [] => []
-  | x1 :: xs1 =>
+    [] => [] (* empty case *)
+  | x1 :: xs1 => 
       let
-        val list1 = x1 :: list_longest_ascend(list_filter(xs1, fn x => (x >= x1)))
-        val list2 = list_longest_ascend(xs1)
+        val list1 = x1 :: list_longest_ascend(list_filter(xs1, fn x => (x >= x1))) (* x1 is in the result, 
+        then you can remove all the elements in xs that are less than x1 and then make a recursive call.
+        and then x1 :: res1 is the result, where res1 is the return value of the recursive call *)
+        val list2 = list_longest_ascend(xs1) (* x1 is not in the result, so simply make a recursive call on xs to get the result *)
       in
-        if list_length(list1) >= list_length(list2) then list1 else list2
+        if list_length(list1) >= list_length(list2) then list1 else list2 (* comparing lengths *)
       end
 (* end of [CS320-2023-Sum1-assign03-04.sml] *)
