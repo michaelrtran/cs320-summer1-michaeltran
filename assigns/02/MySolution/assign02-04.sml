@@ -15,6 +15,13 @@ fun list_longest_ascend(xs: int list): int list
 
 (* ****** ****** *)
 
+fun (* copied from the class library and from lecture 06/12, but it did not pass the Gradescope, so putting it in the file for safety *)
+list_filter
+(xs: 'a list, test: 'a -> bool): 'a list =
+list_foldr
+( xs, []
+, fn(x1, res) => if test(x1) then x1 :: res else res)
+
 fun list_longest_ascend(xs: int list): int list =
   case xs of
     [] => [] (* empty case *)
