@@ -38,9 +38,9 @@ fn(xs: int list, ys: int list) => ...
 
 (* ****** ****** *)
 
-fun quiz02_02(xs: int list, ys: int list): bool =
+val quiz02_02 = fn(xs: int list, ys: int list) =>
     let
-      fun helper(pair) =
+      val helper = fn(pair) =>
         let
           val x1 = #1(pair) (* get the first number in the tuple *)
           val y1 = #2(pair) (* get the second number in the tuple *)
