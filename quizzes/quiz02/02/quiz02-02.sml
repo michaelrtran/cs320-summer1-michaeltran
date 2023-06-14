@@ -40,10 +40,10 @@ fn(xs: int list, ys: int list) => ...
 
 val quiz02_02 = fn(xs: int list, ys: int list) =>
     let
-      val helper = fn(pair) =>
+      val helper = fn(tuple) =>
         let
-          val x1 = #1(pair) (* get the first number in the tuple *)
-          val y1 = #2(pair) (* get the second number in the tuple *)
+          val x1 = #1(tuple) (* get the first number in the tuple *)
+          val y1 = #2(tuple) (* get the second number in the tuple *)
         in
           abs (x1 - y1) < 10 (* check if absolute value works *)
         end

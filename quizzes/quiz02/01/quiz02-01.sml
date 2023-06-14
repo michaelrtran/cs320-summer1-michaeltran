@@ -60,10 +60,10 @@ fn(word: string) => ...
 val quiz02_01 = fn(word: string) =>
     let
     val helper = fn(xs: string, x: char) =>
-    string_foldleft(xs, 0, fn(increment, y) =>
-        if y = x then increment + 1 (* counter variable *)
-        else increment
-    )
+        string_foldleft(xs, 0, fn(increment, y) =>
+            if y = x then increment + 1 (* counter variable *)
+            else increment
+        )
     val char2int = fn(character1: char) => (* created this to return a function that converts a char into an int
     rather than just returning helper(word, character1) b/c that isn't a function that converts a char into an int  *)
         helper(word, character1)
