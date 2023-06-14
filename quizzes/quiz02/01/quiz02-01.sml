@@ -61,10 +61,11 @@ fun quiz02_01 (word: string): char -> int =
     let
     fun helper(xs: string, x: char): int =
     string_foldleft(xs, 0, fn(increment, y) =>
-        if y = x then increment + 1
+        if y = x then increment + 1 (* counter variable *)
         else increment
     )
-    fun char2int(character1: char): int =
+    fun char2int(character1: char): int = (* created this to return a function that converts a char into an int
+    rather than just returning helper(word, character1) b/c that isn't a function that converts a char into an int  *)
         helper(word, character1)
     in
       char2int

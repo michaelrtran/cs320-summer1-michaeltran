@@ -42,8 +42,8 @@ fun quiz02_02(xs: int list, ys: int list) =
     let
       fun helper(pair: int list) =
         let
-          val x1 = #1 pair
-          val y1 = #2 pair
+          val x1 = #1(pair)
+          val y1 = #2(pair)
         in
           abs (x1 - y1) < 10
         end
