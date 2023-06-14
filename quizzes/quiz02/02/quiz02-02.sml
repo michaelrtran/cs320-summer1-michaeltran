@@ -38,17 +38,17 @@ fn(xs: int list, ys: int list) => ...
 
 (* ****** ****** *)
 
-fun quiz02_02(xs: int list, ys: int list) =
+fun quiz02_02(xs: int list, ys: int list): bool =
     let
-      fun helper(pair: int list) =
+      fun helper(pair) =
         let
-          val x1 = #1(pair)
-          val y1 = #2(pair)
+          val x1 = #1(pair) (* get the first number in the tuple *)
+          val y1 = #2(pair) (* get the second number in the tuple *)
         in
-          abs (x1 - y1) < 10
+          abs (x1 - y1) < 10 (* check if absolute value works *)
         end
     in
-      list_exists(list_zip2(xs, ys), helper)
+      list_exists(list_cross2(xs, ys), helper) (* if one pair exists, then return true *)
     end
 
 (* end of [CS320-2023-Sum1-quizzes-quiz02-02.sml] *)
