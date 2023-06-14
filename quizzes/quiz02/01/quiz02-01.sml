@@ -57,4 +57,17 @@ fn(word: string) => ...
 
 (* ****** ****** *)
 
+fun quiz02_01 (word: string): char -> int =
+    let
+    fun helper(xs: string, x: char): int =
+    string_foldleft(xs, 0, fn(increment, y) =>
+        if y = x then increment + 1
+        else increment
+    )
+    fun char2int(character1: char): int =
+        helper(word, character1)
+    in
+      char2int
+    end
+
 (* end of [CS320-2023-Sum1-quizzes-quiz02-01.sml] *)
