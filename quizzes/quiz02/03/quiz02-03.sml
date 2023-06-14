@@ -32,5 +32,7 @@ fn(xs: int list) => ...
 
 (* ****** ****** *)
 
+fun quiz02_03(xs: int list): 
+
 (* end of [CS320-2023-Sum1-quizzes-quiz02-03.sml] *)
 
