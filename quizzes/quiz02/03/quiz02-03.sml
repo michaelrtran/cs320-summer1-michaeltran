@@ -35,11 +35,11 @@ fn(xs: int list) => ...
 val quiz02_03 = fn(xs: int list) =>
     let
         val helper = fn(xs: int list, empty: int list) => 
-            list_foldright(xs, empty, fn(x1, xs1) => (* checks if the list is decreasing *)
-                if list_foldright(xs1, true, fn(y1, empty) => (* makes sure that the previous number
-                appended to the list is greater than the current one *)
-                    x1 > y1 andalso empty) then x1 :: empty
-                else empty
+            list_foldright(xs, empty, fn(x1, append) => (* checks if the list is decreasing *)
+                if list_foldright(append, true, fn(y1, testing) => x1 > y1 andalso testing) 
+                (* makes sure that the previous number appended to the list is greater than the current one *)
+                then x1 :: append
+                else append
             )
     in
       helper(xs, [])
