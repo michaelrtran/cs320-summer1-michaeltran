@@ -32,7 +32,17 @@ fn(xs: int list) => ...
 
 (* ****** ****** *)
 
-fun quiz02_03(xs: int list): 
+val quiz02_03 = fn(xs: int list) =>
+    let
+        val helper = fn(xs: int list, acc: int list) => 
+            list_foldl(xs, acc, fn(x, acc') => 
+                if list_foldl(acc', true, fn(y, acc) => 
+                    x > y andalso acc) then x :: acc'
+                else acc'
+            )
+    in
+      helper(xs, [])
+    end
 
 (* end of [CS320-2023-Sum1-quizzes-quiz02-03.sml] *)
 
