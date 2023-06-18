@@ -32,7 +32,7 @@ fun ref_get_at (r1: 'a ref, i: int): 'a = !r1
 
 fun ref_forall (r2: 'a ref, test: 'a -> bool): bool = test(!r2)
 
-fun ref_map_list (r3: 'a ref, fopr: ('a) -> 'b): 'b list = fopr(!r3)
+fun ref_map_list (r3: 'a ref, fopr: ('a) -> 'b): 'b list = [fopr(!r3)]
 
 fun ref_foldleft (r4: 'a ref, res: 'r, fopr: ('r * 'a) -> 'r): 'r = fopr(res, !r4)
 
