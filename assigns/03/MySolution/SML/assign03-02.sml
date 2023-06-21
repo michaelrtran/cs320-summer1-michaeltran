@@ -67,10 +67,27 @@ foreach_to_map_list(string_iforeach)(cs, ifopr)
 
 (* ****** ****** *)
 
-(*
-val
-word_neighbors = fn(word: string) => ...
-*)
+
+val word_neighbors = fn (word: string) =>
+    let
+        val empty = ref []
+    in
+        foreach_to_iforeach(string_foreach)(word, fn(a, character) => 
+            int1_foreach(26, fn(x) =>
+            let
+                val comparison = string_tabulate(string_length(word), fn(y) =>
+                    if a = y then strsub(AB, x) 
+                    else strsub(word, y)
+                )
+            in
+                if comparison <> word then empty := !empty @ [comparison] 
+                else ()
+            end
+        ));
+
+        !empty
+    end
+
 
 (* ****** ****** *)
 

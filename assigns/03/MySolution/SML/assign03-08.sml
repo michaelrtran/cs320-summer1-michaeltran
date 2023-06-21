@@ -20,4 +20,14 @@ matrix.
 
 (* ****** ****** *)
 
+fun stream_ziplst(xs: 'a stream list): 'a list stream =
+    let
+        fun helper(xs: 'a stream list, x: int) =
+            strcon_cons(list_map(xs, fn(y) => stream_get_at(y, x)), fn() => helper(xs, x + 1))
+            
+            handle ExceptionEndList => strcon_nil
+    in
+        fn() => helper(xs, 0)
+    end
+
 (* end of [CS320-2023-Sum1-assign03-08.sml] *)
