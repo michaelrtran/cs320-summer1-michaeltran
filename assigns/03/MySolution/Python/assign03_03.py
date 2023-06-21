@@ -10,13 +10,7 @@ from mypylib_cls import *
 # Please *translate* into Python the SML solution
 # to word_neighbors (which is the one for Assign03-02)
 #
-def word_neighbors(word):
-    """
-    Note that this function should returns a fnlist
-    (not a pylist)
-    Your implementation should be combinator-based very
-    much like the posted solution.
-    """
-    raise NotImplementedError
+AB = "abcdefghijklmnopqrstuvwxyz"
+
 #
 ####################################################

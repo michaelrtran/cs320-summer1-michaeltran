@@ -11,12 +11,7 @@ HX-2023-06-12: 20 points
 Solving the N-queen puzzle
 Here is an implementation of the famous 8-queen puzzle:
 https://ats-lang.sourceforge.net/DOCUMENT/INT2PROGINATS/HTML/x631.html
-//
-"""
-####################################################
-def solve_N_queen_puzzle(N):
-"""
-######
+
 A board of size N is a tuple of length N.
 ######
 For instance, a tuple (0, 0, 0, 0) stands
@@ -35,6 +30,8 @@ a stream of ALL the boards of size N that contain N
 queen pieces (one on each row and on each column) such
 that no queen piece on the board can catch any other ones
 on the same board.
+//
 """
-    raise NotImplementedError
+####################################################
+
 ####################################################
