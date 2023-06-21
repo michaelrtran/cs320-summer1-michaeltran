@@ -28,7 +28,7 @@ library for this class.
 (* ****** ****** *)
 
 
-fun ref_get_at (r1: 'a ref, i: int): 'a = !r1
+fun ref_get_at (r1: 'a ref, i: int): 'a = if i >= 0 then !r1 else raise Subscript
 
 fun ref_forall (r2: 'a ref, test: 'a -> bool): bool = test(!r2)
 

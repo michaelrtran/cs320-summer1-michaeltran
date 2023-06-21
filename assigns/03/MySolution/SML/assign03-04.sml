@@ -26,7 +26,7 @@ val the_ln2_stream: real stream = (* implementation does not work all the way ye
             let
               val element = if x mod 2 = 0 then ~1.0/ real(x) else 1.0/ real(x)
             in
-              strcon_cons(helper(x), helper(x + 1, element + acc))
+              strcon_cons(helper(x), helper(x + 1, element))
             end
     in
         fn() => helper(1)
