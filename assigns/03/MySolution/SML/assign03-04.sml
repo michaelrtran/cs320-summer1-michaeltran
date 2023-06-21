@@ -19,18 +19,24 @@ And so on, and so forth
 
 (* ****** ****** *)
 
+fun helper() =
+  let
+    fun helper2(denominator: int, previous: real): real strcon = (* recursively adds onto the stream with partial sums *)
+      let
+        fun result(): real =
+          if denominator mod 2 = 0 
+          then previous - 1.0 / Real.fromInt(denominator) (* if it is even, subtract *)
+          else previous + 1.0 / Real.fromInt(denominator) (* if it is odd, add *)
+      in
+        strcon_cons(result(), fn() => helper2(denominator + 1, result())) (* increment for the next partial sum *)
+      end
+  in
+    fn() => helper2(1, 0.0) (* create the stream *)
+  end
 
-val the_ln2_stream: real stream = (* implementation does not work all the way yet *)
-    let
-        fun helper(x: int): real =
-            let
-              val element = if x mod 2 = 0 then ~1.0/ real(x) else 1.0/ real(x)
-            in
-              strcon_cons(helper(x), helper(x + 1, element))
-            end
-    in
-        fn() => helper(1)
-    end
+
+val the_ln2_stream: real stream = helper()
+
 
 (* ****** ****** *)
 
