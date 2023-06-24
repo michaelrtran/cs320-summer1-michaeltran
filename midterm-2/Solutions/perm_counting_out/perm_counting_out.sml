@@ -1,7 +1,7 @@
 (* ****** ****** *)
 
 use
-"./../../mysmlib/mysmlib-cls.sml";
+"./../../../mysmlib/mysmlib-cls.sml";
 
 (* ****** ****** *)
 
@@ -37,9 +37,48 @@ perm_counting_out([1,2,3,4], 3) = [4,1,3,2]
 (* ****** ****** *)
 
 fun
-perm_counting_out
-(xs: int list, k0: int): int list = ...
-					    
+list_get_at(xs, n) =
+foreach_to_get_at(list_foreach)(xs, n)
+
 (* ****** ****** *)
 
-(* end of [CS320-2023-Spring-midterm2-perm_counting_out.sml] *)
+fun
+perm_counting_out
+(xs: int list, k0: int): int list =
+let
+
+(*
+val () = assert320(k0 > 0)
+*)
+
+fun
+remove
+( ys: int list
+, zs: int list, i0: int): int list =
+(
+case ys of
+  nil => nil
+| y1 :: ys =>
+  if i0 > 0
+  then remove(ys, y1::zs, i0-1)
+  else list_append(ys, list_reverse(zs))
+)
+
+fun
+helper(xs, n0) =
+if
+n0 = 0
+then [] else
+let
+  val i0 = k0 mod n0
+in
+  list_get_at(xs, i0) :: helper(remove(xs, [], i0), n0-1)
+end
+  
+in
+  helper(xs, length(xs))
+end
+
+(* ****** ****** *)
+
+(* end of [CS320-2023-Sum1-midterm2-perm_counting_out.sml] *)
