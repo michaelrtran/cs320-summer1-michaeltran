@@ -21,7 +21,6 @@ use
 
 (* ****** ****** *)
 
-<<<<<<< HEAD:midterm-2/stream_drawdowns/stream_drawdowns.sml
 fun stream_drawdowns (fxs: int stream): int list stream = 
     let
       fun enumerating(integerlist: int list, fxs: int stream): int list stream = fn() =>
@@ -34,13 +33,6 @@ fun stream_drawdowns (fxs: int stream): int list stream =
     in
       enumerating([], fxs)
     end
-=======
-(*
-fun
-stream_drawdowns
-(fxs: int stream): int list stream = ...
-*)
->>>>>>> upstream/main:midterm-2/MySolutions/stream_drawdowns/stream_drawdowns.sml
   
 (* ****** ****** *)
 

@@ -34,7 +34,7 @@ fun stream_evaluate(fxs: real stream, x0: real): real stream =
           let
             val sums = enum + current * power_of_reals(x0, power)
           in
-            strcon_cons(sums, helper(fxs, sums, power + 1))
+            strcon_cons(sums, helper(remainingsums, sums, power + 1))
           end
   in
     helper(fxs, 0.0, 0)
