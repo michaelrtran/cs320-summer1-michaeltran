@@ -27,12 +27,12 @@ fun power_of_reals(x0: real, n: int): real =
 
 fun stream_evaluate(fxs: real stream, x0: real): real stream = 
   let
-    fun helper(fxs: real stream, enum: real, power: int): real stream =
-      case fxs of
+    fun helper(fxs: real stream, enum: real, power: int) = fn() =>
+      case fxs() of
         strcon_nil => strcon_nil
       | strcon_cons(current, remainingsums) =>
           let
-            val sums = enum + current * power_of_reals(n, power)
+            val sums = enum + current * power_of_reals(x0, power)
           in
             strcon_cons(sums, helper(fxs, sums, power + 1))
           end

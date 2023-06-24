@@ -8,7 +8,8 @@ use "./../../mysmlib//mysmlib-cls.sml";
 use "./midterm2-00.sml";
 *)
 
-use "./stream_takedrop.sml";
+use "./stream_take.sml";
+use "./stream_drop.sml";
 
 (* ****** ****** *)
 

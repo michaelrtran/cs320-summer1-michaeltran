@@ -24,7 +24,7 @@ use
 fun stream_drawdowns (fxs: int stream): int list stream = 
     let
       fun enumerating(integerlist: int list, fxs: int stream): int list stream = fn() =>
-        case fxs of
+        case fxs() of
             strcon_nil => strcon_nil
         |   strcon_cons(a, b) =>
                 if integerlist = [] then enumerating([a], b)()
