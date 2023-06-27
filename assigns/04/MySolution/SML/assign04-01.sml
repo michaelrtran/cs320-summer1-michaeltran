@@ -16,6 +16,9 @@ stream_permute_list(xs: 'a list): 'a list stream = ...
 //
 *)
 
+fun stream_permute_list(xs: 'a list): 'a list stream =
+
+
 (* ****** ****** *)
 
 (* end of [CS320-2023-Sum1-assign04-01.sml] *)
