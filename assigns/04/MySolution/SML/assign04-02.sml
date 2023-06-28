@@ -20,4 +20,6 @@ theNatPairs_cubesum: (int * int) stream = fn () => ...
 
 (* ****** ****** *)
 
+val theNatPairs_cubesum: (int * int) stream = fn () =>
+
 (* end of [CS320-2023-Sum1-assign04-02.sml] *)
