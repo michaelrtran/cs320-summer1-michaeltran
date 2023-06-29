@@ -44,11 +44,11 @@ def wordle_hint(w1, w2):
             result.append((1, w2_characters)) # append it to the return
 
         else:
-            if w1counter[w2_characters] <= 0:
-                result.append((0, w2_characters))
+            if w1counter[w2_characters] > 0:
+                result.append((2, w2_characters))
 
             else:
-                result.append((2, w2_characters))
+                result.append((0, w2_characters))
     
     return result # return
 ########################################################################
