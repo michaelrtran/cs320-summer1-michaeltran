@@ -49,3 +49,11 @@ val rec isevn =
 and isodd = 
     fn x => if x > 0 then isevn(x - 1) else false
 
+fun tocube(x: int): int =
+    x * x * x
+
+fun tosquare(x: int): int =
+    x * x
+
+
+

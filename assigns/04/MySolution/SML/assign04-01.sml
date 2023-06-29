@@ -17,6 +17,26 @@ stream_permute_list(xs: 'a list): 'a list stream = ...
 *)
 
 fun stream_permute_list(xs: 'a list): 'a list stream =
+  let
+    fun enumerating(x, []) = 
+        [[x]] 
+    |   enumerating(x, (y :: ys)) =
+            (x :: y :: ys) :: list_map((enumerating(x, ys)), (fn yxs => 
+                y :: yxs)
+                )
+
+    fun helper([]) = 
+        list_streamize[[]]
+    |   helper(x :: xs) =
+            stream_concat(stream_make_map(helper(xs), (fn y => 
+                list_streamize(enumerating(x, y)
+                )
+                )
+                )
+                )
+  in
+    helper(xs)
+  end
 
 
 (* ****** ****** *)

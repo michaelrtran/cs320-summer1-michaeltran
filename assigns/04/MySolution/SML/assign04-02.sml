@@ -20,6 +20,20 @@ theNatPairs_cubesum: (int * int) stream = fn () => ...
 
 (* ****** ****** *)
 
-val theNatPairs_cubesum: (int * int) stream = fn () =>
+fun tocube(x: int): int =
+    x * x * x
+
+val theNatPairs_cubesum: (int * int) stream = 
+  let
+    fun helper(a: int): (int * int) stream = fn() =>
+      strcon_cons((a, a), stream_merge2(stream_tabulate(~1, (fn(b) => 
+          (a, a + b + 1))), helper(a + 1), (fn((a1, b1), (a2, b2)) =>
+        (tocube(a1) + tocube(b1) <= tocube(a2) + tocube(b2))
+        )
+        )
+        )
+  in
+    helper(0)
+  end
 
 (* end of [CS320-2023-Sum1-assign04-02.sml] *)
